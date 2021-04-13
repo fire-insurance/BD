@@ -1,0 +1,38 @@
+﻿<Window x:Class="Kursach.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kursach"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d" Height="600" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/Kursach;component/Assets/logo.png" WindowStyle="None" Background="#FF272727" >
+    <Window.Effect>
+        <DropShadowEffect/>
+    </Window.Effect>
+    <Grid Margin="0,0,0,-27">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="599*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="50,50,50,50" Grid.Row="1">
+            <Image Source="/Assets/logo.png" Width="95" Margin="128,-20,127,0"/>
+            <Border Background="White" Margin="10 20" CornerRadius="10">
+                <StackPanel Margin="40" >
+                    <TextBlock Text="Пожалуйста, выполните вход" Style="{StaticResource ResourceKey=MaterialDesignBody1TextBlock}"
+                               HorizontalAlignment="Center"/>
+                    <TextBox x:Name="LoginText" Margin="-25,30,-25,0" Style="{StaticResource MaterialDesignTextBox}" materialDesign:HintAssist.Hint="Логин" CaretBrush="Coral" />
+                    <PasswordBox x:Name="PasswordText" Margin="-25,35,-25,0" Style="{StaticResource MaterialDesignPasswordBox}" materialDesign:HintAssist.Hint="Пароль" CaretBrush="Coral"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button x:Name="CancelButton" Margin="15,30" Content="Отмена" Background="Coral" Click="CancelButton_Click" IsCancel="True"/>
+                        <Button x:Name="EnterButton" Margin="15,30" Content="Войти" Background="Coral" Click="EnterButton_Click" IsDefault="True"/>
+                        
+                    </StackPanel>
+                    <TextBlock x:Name="Invalid_info" Text="" Style="{StaticResource ResourceKey=MaterialDesignBody1TextBlock}"/>
+                </StackPanel>
+
+            </Border>
+
+
+        </StackPanel>
+    </Grid>
+</Window>

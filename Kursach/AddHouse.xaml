@@ -1,0 +1,89 @@
+﻿<Window x:Class="Kursach.AddHouse"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kursach"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Добавить здание" Height="448.894" Width="485.436" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen" Background="#FF272727" Icon="Assets/logo.png">
+    <Grid Margin="0,0,2,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <Border Background="White" CornerRadius="15" Grid.Column="1" Grid.Row="1">
+            <StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="70"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="20"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Column="1" Grid.Row="1" Text="Самострой"  VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+                    <CheckBox x:Name="SelfBuildBox" Grid.Column="2" Grid.Row="1" Style="{StaticResource MaterialDesignActionAccentToggleButton}" Width="20" Height="20" 
+                              HorizontalAlignment="Center" VerticalAlignment="Center" Background="Coral"/>
+
+                    <ComboBox  x:Name="TypeBox" Style="{StaticResource MaterialDesignComboBox}" materialDesign:HintAssist.Hint="Тип" 
+                                Grid.Column="1" Grid.Row="3"  VerticalAlignment="Center" HorizontalAlignment="Left"
+                               IsEditable="True" Grid.ColumnSpan="2" Width="125" Margin="0,6"/>
+                    <TextBlock x:Name="test" Grid.Column="3" Grid.Row="17"  Grid.ColumnSpan="4" Margin="4,4,1,0" />
+                    <ComboBox  x:Name="PurposeBox" Style="{StaticResource MaterialDesignComboBox}" materialDesign:HintAssist.Hint="Назначение" 
+                               Grid.Column="1" Grid.Row="2"  VerticalAlignment="Center" HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="0,8,0,4" Width="125" Height="28"/>
+                    <TextBox  x:Name="YearBox" Style="{StaticResource MaterialDesignTextBox}" materialDesign:HintAssist.Hint="Год постройки" CaretBrush="Coral" 
+                               Grid.Column="1" Grid.Row="4"  VerticalAlignment="Center" HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="0,8" Width="125"/>
+                    <TextBox  x:Name="BrokenBox" Style="{StaticResource MaterialDesignTextBox}" materialDesign:HintAssist.Hint="Износ" CaretBrush="Coral" 
+                               Grid.Column="1" Grid.Row="5"  VerticalAlignment="Center" HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="0,8" Width="125"/>
+                    <TextBox  x:Name="NumberBox" Style="{StaticResource MaterialDesignTextBox}" materialDesign:HintAssist.Hint="Номер в экспликации" CaretBrush="Coral" 
+                               Grid.Column="1" Grid.Row="6"  VerticalAlignment="Center" HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="0,8" Width="125"/>
+
+                    <TextBox x:Name="TotalSquareBox"  Style="{StaticResource MaterialDesignTextBox}" materialDesign:HintAssist.Hint="Общая площадь" CaretBrush="Coral"  
+                               Grid.Column="4" Grid.Row="1"  VerticalAlignment="Center" HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="0,2" Width="220"/>
+                    <TextBox  x:Name="LifeSquareBox" Style="{StaticResource MaterialDesignTextBox}" materialDesign:HintAssist.Hint="Жилая площадь" CaretBrush="Coral" 
+                               Grid.Column="4" Grid.Row="2"  VerticalAlignment="Center" HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="0,2" Width="220"/>
+                    <TextBox  x:Name="WallsBox" Style="{StaticResource MaterialDesignTextBox}" materialDesign:HintAssist.Hint="Материал стен" CaretBrush="Coral" 
+                               Grid.Column="4" Grid.Row="3"  VerticalAlignment="Center" HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="0,2" Width="220"/>
+                    <TextBox  x:Name="PriceBox" Style="{StaticResource MaterialDesignTextBox}" materialDesign:HintAssist.Hint="Инвентаризационная стоимость" CaretBrush="Coral" 
+                               Grid.Column="4" Grid.Row="4"  VerticalAlignment="Center" HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="0,2" Width="220"/>
+                    <TextBox  x:Name="LevelsBox" Style="{StaticResource MaterialDesignTextBox}" materialDesign:HintAssist.Hint="Этажность" CaretBrush="Coral" 
+                               Grid.Column="4" Grid.Row="5"  VerticalAlignment="Center" HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="0,2" Width="220"/>
+
+                    <Button x:Name="OkButton" Click="OkButton_Click" Grid.Column="2" Grid.Row="8" Content="Ок" Background="Coral" Height="Auto" Margin="0,0,34,10" IsDefault="True" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                    <Button x:Name="CancelButton" Click="CancelButton_Click" Grid.Column="4" Grid.Row="8" Content="Отмена" Background="Coral" Height="Auto" IsCancel="True" Margin="0,0,0,10" Grid.RowSpan="2" />
+
+                </Grid>
+            </StackPanel>
+
+
+        </Border>
+    </Grid>
+</Window>

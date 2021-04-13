@@ -1,0 +1,110 @@
+﻿<Window x:Class="Kursach.View.LandInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kursach.View"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="LandInfo" Height="720" Width="1080" Background="#FF272727" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Icon="/Kursach;component/Assets/logo.png">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="47" />
+            <ColumnDefinition Width="22"/>
+            <ColumnDefinition Width="28"/>
+            <ColumnDefinition Width="796" />
+            <ColumnDefinition Width="154"/>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <Border Background="White" Height="630" Width="900"  Grid.Column="4" Grid.Row="1" Grid.RowSpan="7" Grid.ColumnSpan="2" Margin="44,50,6,0" CornerRadius="50" >
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="260"/>
+                    <ColumnDefinition Width="233*"/>
+                    <ColumnDefinition Width="40"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="180"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="Освещение" HorizontalAlignment="Right" FontSize="20" VerticalAlignment="Center" Margin="0,7,0,6" Height="27" Width="106" />
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="Водопровод" HorizontalAlignment="Right" FontSize="20" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="0,7,24,6" Height="27" Width="114" />
+                <TextBlock Grid.Row="3" Grid.Column="1" Text="Отопление" HorizontalAlignment="Right" FontSize="20" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="0,7,24,6" Height="27" Width="101" />
+
+                <TextBlock Grid.Row="1" Grid.Column="4" Text="Фотографии землевладения" 
+                           HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Center" Margin="0,7,0,6" Height="27" />
+                <Button x:Name="OpenFolder" Grid.Row="2" Grid.Column="4" Content="Открыть папку"
+                        Background="Coral" HorizontalAlignment="Left" FontSize="18" VerticalAlignment="Center" 
+                        Click="OpenFolder_Click" Margin="0,4" Width="259" />
+
+                <CheckBox x:Name="LightBox" Grid.Column="2" Grid.Row="1" Style="{StaticResource MaterialDesignActionAccentToggleButton}" 
+                          Background="Coral" HorizontalAlignment="Left" Margin="11,4,0,4" Grid.ColumnSpan="2" />
+                <CheckBox x:Name="WaterBox" Grid.Column="2" Grid.Row="2" Style="{StaticResource MaterialDesignActionAccentToggleButton}" 
+                          Background="Coral" HorizontalAlignment="Left" Margin="11,4,0,4" Grid.ColumnSpan="2"  />
+                <CheckBox x:Name="HeatBox" Grid.Column="2" Grid.Row="3" Style="{StaticResource MaterialDesignActionAccentToggleButton}" 
+                          Background="Coral" HorizontalAlignment="Left" Margin="11,4,0,4" Grid.ColumnSpan="2" />
+
+
+
+                <TextBlock Text="Площади землевладения" Grid.Column="4" Grid.Row="4" VerticalAlignment="Center" FontSize="20" Margin="0,40,0,112" HorizontalAlignment="Left" Height="28" Width="232"  />
+                <DataGrid x:Name="LandInfoTable" IsReadOnly="True" 
+                         Grid.Row="4" Grid.Column="1"  GridLinesVisibility="All" 
+                   Grid.ColumnSpan="5" Margin="0,73,0,207" Grid.RowSpan="2" Width="810" />
+
+                <TextBlock Text="Количество зданий:" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" FontSize="20" Margin="0,96,0,-56" Grid.RowSpan="2"/>
+                <Button x:Name="HousesInfo" Click="HousesInfo_Click" Grid.Row="5" Grid.Column="1" Content="Просмотр информации о зданиях" Background="Coral"
+                        HorizontalAlignment="Left" FontSize="18" VerticalAlignment="Center" Margin="0,139,0,39" Width="330"
+                        Grid.ColumnSpan="4"/>
+
+
+            </Grid>
+
+        </Border>
+
+
+
+        <TextBlock Grid.Row="3" Grid.Column="4" Text="Информация о землевладении" HorizontalAlignment="Center" FontSize="20" Margin="87,18,423,44" Foreground="White" />
+
+        <Button x:Name="BackButton" Grid.Column="1" Grid.Row="7" Content="Назад" Click="BackButton_Click"
+                Background="Coral" Margin="0,402,0,0" BorderBrush="White" Grid.ColumnSpan="3" />
+
+        <Button x:Name="CloseButton1" Grid.Column="5" Grid.ColumnSpan="4" Margin="123,0,6,0"  Grid.Row="0" Background="#FFF04242" 
+                BorderBrush="#FFF04242" Content="X" 
+                FontSize="10" FontFamily="Segoe UI Black" 
+                Height="Auto" VerticalAlignment="Center" 
+                FontWeight="Bold" RenderTransformOrigin="0.333,0.492"
+                Click="CloseButton1_Click"/>
+        <Button x:Name="HideButton1" Grid.Column="5" Margin="78,0,31,0" 
+                Width="45" Grid.Row="0" Background="#FF4681FF" 
+                BorderBrush="#FF4681FF" Content="–" Height="Auto" 
+                FontFamily="Segoe UI Black" FontSize="12"
+                Click="HideButton1_Click"/>
+
+    </Grid>
+
+</Window>
